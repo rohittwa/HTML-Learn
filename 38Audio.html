@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<body>
+    <audio controls autoplay muted id="sound" onended="changeButton()">
+        <source src="D:\Music\Enchanting Flute.mp4" type="audio/mp4">
+    </audio><br>
+    <button id="playPause" onclick="play_pause()">Play</button>
+
+    <script>
+        var sound = document.getElementById("sound");
+        var playPause = document.getElementById("playPause");
+        function play_pause(){
+            if(sound.paused){
+                sound.play();
+                sound.muted = false;
+                playPause.textContent = "Pause";
+            }
+
+            else{
+                sound.pause();
+                playPause.textContent = "Play";
+            }
+        }
+
+        function changeButton(){
+            playPause.textContent = "Play";
+        }
+    </script>
+</body>
+</html>

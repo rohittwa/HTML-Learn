@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        #box{
+            border:1px solid black;
+        }
+
+        #box2{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        The HTML <canvas> element is used to draw graphics, on the fly, via JavaScript.
+
+        The <canvas> element is only a container for graphics. You must use JavaScript to actually draw the graphics.
+
+        Canvas has several methods for drawing paths, boxes, circles, text, and adding images.
+
+        A canvas is a rectangular area on an HTML page. By default, a canvas has no border and no content.
+
+        The markup looks like this:
+        <canvas id="myCanvas" width="200" height="100"></canvas>
+
+        Note: Always specify an id attribute (to be referred to in a script), and a width and height attribute to define the size of the canvas. To add a border, use the style attribute.
+    -->
+
+    <canvas id="box" width="900" height="580"></canvas>
+
+    <canvas id="box2" width="900" height="580"></canvas><br>
+
+    <img src="E:\Pictures\Wallpapers\black_white_common_tern_bird_sharp_beak_bird_green_white_blur_bokeh_background_4k_hd_birds.jpg" height="200px" id="img"><br>
+    <button onclick="applyImg()">Add image to canvas 2</button>
+
+    <script>
+        var c = document.getElementById("box");
+        var line = c.getContext("2d");
+        line.moveTo(20, 20);
+        line.lineTo(30, 200);
+        line.stroke();
+
+        var circle = c.getContext("2d");
+        circle.beginPath();
+        circle.arc(120, 200, 80, 0, 2*Math.PI);     // arc(left,top,radius);
+        circle.stroke();
+
+        var text = c.getContext("2d");
+        text.font = "30px Arial";
+        text.fillText("Hello World", 50, 50);       // fillText(text,left,top);
+
+        var text2 = c.getContext("2d");
+        text2.font = "30px Tahoma";
+        text2.strokeText("Hello Everyone", 250, 50);    // strokeText(text,left,top);
+
+        var gradient = c.getContext("2d");
+        var grd = gradient.createLinearGradient(0,0, 200,0);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "blue");
+        gradient.fillStyle = grd;
+        gradient.fillRect(10, 300, 150, 80);
+
+        var gradient2 = c.getContext("2d");
+        var grd2 = gradient2.createLinearGradient(0, 400, 200, 600);
+        grd2.addColorStop(0, "yellow");
+        grd2.addColorStop(0.5, "green");
+        grd2.addColorStop(1, "black");
+        gradient2.fillStyle = grd2;
+        gradient2.fillRect(0, 400, 200, 200);
+
+        var c2 = document.getElementById("box2");
+        var gradient3 = c2.getContext("2d");
+        var grd3 = gradient3.createRadialGradient(105,100,16,95,90,100);
+        grd3.addColorStop(0, "green");
+        grd3.addColorStop(0.5, "blue");
+        grd3.addColorStop(1, "red");
+        gradient3.fillStyle = grd3;
+        gradient3.fillRect(0, 0, 200, 200);
+
+        function applyImg()
+        {
+            var imgarea = c2.getContext("2d");
+            var img = document.getElementById("img");
+
+            imgarea.drawImage(img, 10, 250);
+        }
+    </script>
+</body>
+</html>

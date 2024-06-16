@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname">
+        <!--
+            The <input type="text"> defines a single-line input field for text input.
+            Note: The form itself is not visible. Also note that the default width of an input field is 20 characters.
+
+            The <label> element is useful for screen-reader users, because the screen-reader will read out loud the label when the user focuses on the input element.
+
+            The <label> element also helps users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) - because when the user clicks the text within the <label> element, it toggles the radio button/checkbox.
+
+            The for attribute of the <label> tag should be equal to the id attribute of the <input> element to bind them together.
+        -->
+
+        <br>
+        <label>HTML</label><input type="radio" name="lang"><br>
+        <label>Java</label><input type="radio" name="lang"><br>
+        <label>Python</label><input type="radio" name="lang"><br><br>
+        <!--
+            The <input type="radio"> defines a radio button.
+
+            Radio buttons let a user select ONE of a limited number of choices.
+        -->
+
+        Hobbie:<br>
+        <label>Sports</label><input type="checkbox" name="hobbie"><br>
+        <label>Music</label><input type="checkbox" name="hobbie"><br>
+        <label>Dance</label><input type="checkbox" name="hobbie"><br>
+        <label>Gardening</label><input type="checkbox" name="hobbie"><br><br>
+        <!--
+            The <input type="checkbox"> defines a checkbox.
+
+            Checkboxes let a user select ZERO or MORE options of a limited number of choices.
+        -->
+
+        <input type="button" name="Click me" value="Click me"><br><br>
+
+        <input type="submit">
+        <!--
+            The <input type="submit"> defines a button for submitting the form data to a form-handler.
+
+            The form-handler is typically a file on the server with a script for processing input data.
+
+            The form-handler is specified in the form's action attribute.
+        -->
+
+        <!--
+            Notice that each input field must have a name attribute to be submitted.
+
+            If the name attribute is omitted, the value of the input field will not be sent at all.
+        -->
+    </form>
+</body>
+</html>

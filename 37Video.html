@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+</head>
+<body>
+    <video height="300" controls autoplay muted id="video1" onended="buttonChange()">
+        <source src="VID-20221005-WA0025.mp4" type="video/mp4">
+    </video>
+
+    <br>
+    <button id="playPause" onclick="play_pause()">Pause</button>
+
+    <br>
+    <button onclick="incWidth()">Increase Width</button>
+
+    <br>
+    <button onclick="decWidth()">Decrease Width</button>
+
+    <br>
+    <button onclick="incHeight()">Increase Height</button>
+
+    <br>
+    <button onclick="decHeight()">Decrease Height</button>
+
+    <br>
+    <button id="muteUnmute" onclick="mute_unmute()">Unmute</button>
+
+    <script>
+        var myVideo = document.getElementById("video1");
+        var button = document.getElementById("playPause");
+        function play_pause(){
+            if(myVideo.paused)
+            {
+                myVideo.play();
+                button.textContent = "Pause";
+            }
+            else
+            {
+                myVideo.pause();
+                button.textContent = "Play";
+            }
+        }
+
+        function incWidth(){
+            myVideo.width += 20;
+        }
+
+        function decWidth(){
+            myVideo.width -= 20;
+        }
+
+        function incHeight(){
+            myVideo.height += 20;
+        }
+
+        function decHeight(){
+            myVideo.height -= 20;
+        }
+
+        var muteUnmute = document.getElementById("muteUnmute");
+        function mute_unmute(){
+            if(myVideo.muted){
+                myVideo.muted = false;
+                muteUnmute.textContent = "Mute";
+            }
+
+            else{
+                myVideo.muted = true;
+                muteUnmute.textContent = "UnMute";
+            }
+        }
+
+        function buttonChange(){
+            button.textContent = "Play";
+        }
+    </script>
+</body>
+</html>

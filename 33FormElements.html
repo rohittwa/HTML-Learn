@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+</head>
+<body>
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value); n1.textContent=a.value;">
+        <select id="month" name="month" size="2" multiple>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April" selected>April</option>
+            <option value="May">May</option>
+        </select><br><br>
+
+        <!--
+            Use the multiple attribute to allow the user to select more than one value.
+        -->
+
+        <textarea rows="10" cols="20" placeholder="Hello write your message here" name="message"></textarea><br><br>
+
+        <button type="button" onclick="alert('Hello World')">Click Me!</button><br><br>
+
+        <fieldset>
+            <legend>Personalia:</legend>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset><br><br>
+
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit"><br><br>
+
+        <div id="n1" style="margin-left:71px;">50</div>
+        0
+        <input type="range" id="a" name="a" value="50">
+        100 +
+        <input type="number" id="b" name="b" value="50">
+        =
+        <output name="x" for="a b"></output>
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
